@@ -193,5 +193,19 @@ p {
   background: #ffb8cf;
 }
 
+.final-message {
+  font-family: "Caveat", cursive;
+  color: #ffd6dd;
+  font-size: clamp(1.2rem, 3vw + 0.4rem, 1.9rem);
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+/* Appears last, after signature */
+.fade-in-end {
+  animation: fadeIn 5.3s ease forwards;
+}
+
 
 
