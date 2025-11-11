@@ -1,0 +1,135 @@
+/* Page basics */
+:root{
+  --bg:#0b0710;
+  --glow: #d9ff61;      /* greenyellow */
+  --accent:#ff6b6b;     /* sweet pink-red */
+  --text:#f8f8ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 50% -200px, #1b1227 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  padding: 16px;
+}
+
+/* Centered, fluid container */
+.meme-container{
+  width: min(900px, 92vw);
+  margin: 24px auto 48px;
+  text-align: center;
+}
+
+/* Image */
+.meme-container img {
+  width: 250%;
+  max-width: 800px;     /* looks great on desktop */
+  height: auto;
+  border-radius: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 0 25px rgba(0,0,0,0.6),
+    0 0 120px rgba(0,0,0,0.8) inset;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Heading: neon, responsive */
+h1 {
+  color: #ffb3c6; /* blush rose */
+  font-family: "Caveat", cursive;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  font-size: clamp(1.2rem, 4.5vw + 0.3rem, 2.4rem);
+  text-shadow: 0 0 14px rgba(255, 160, 180, 0.35);
+}
+
+/* Caption: cute handwritten vibe, responsive */
+p {
+  font-family: "Caveat", cursive;
+  color: #ffd6dd; /* soft gentle pink */
+  font-size: clamp(1rem, 3vw + 0.4rem, 1.8rem);
+  line-height: 1.45;
+  margin-top: 12px;
+}
+
+/* Small phones: soften sizes & spacing a touch */
+@media (max-width: 380px){
+  .meme-container{ margin: 12px auto 32px; }
+  h1{ letter-spacing: .2px; }
+  .meme-container img{ border-width: 4px; border-radius: 10px; }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2.2s ease forwards;
+}
+
+/* Smooth stagger for paragraphs or smaller lines */
+.fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 2.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tiny heart style */
+.heart {
+  font-size: 2.3rem;
+  color: #ff9bb7; /* soft rose pink */
+  text-align: center;
+  margin-top: 18px;
+  opacity: 0;
+}
+
+/* Slightly later fade-in */
+.fade-in-late {
+  animation: fadeIn 3.4s ease forwards;
+}
+
+.signature {
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.2rem, 3vw + 0.4rem, 2rem);
+  color: #ffd6dd; /* soft, warm pink */
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+}
+
+/* Appears last, after everything else */
+.fade-in-slowest {
+  animation: fadeIn 4.3s ease forwards;
+}
+
+/* Soft breathing animation for the heart */
+@keyframes heartBreathe {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+    text-shadow: 0 0 4px rgba(255, 155, 183, 0.4);
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(255, 155, 183, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+    text-shadow: 0 0 4px rgba(255, 155, 183, 0.4);
+  }
+}
+
+/* Apply breathing only after it appears (class stays same) */
+.heart.breathe {
+  animation: fadeIn 3.4s ease forwards, heartBreathe 4.5s ease-in-out 3.4s infinite;
+}
