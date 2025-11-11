@@ -18,11 +18,19 @@ body {
 }
 
 /* Centered, fluid container */
-.meme-container{
-  width: min(900px, 92vw);
-  margin: 24px auto 48px;
-  text-align: center;
+.meme-container img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 0 25px rgba(0,0,0,0.6),
+    0 0 120px rgba(0,0,0,0.8) inset;
+  display: block;
+  margin: 0 auto 20px;
 }
+
 
 /* Image */
 .meme-container img {
@@ -133,3 +141,37 @@ p {
 .heart.breathe {
   animation: fadeIn 3.4s ease forwards, heartBreathe 4.5s ease-in-out 3.4s infinite;
 }
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+
+  .meme-container {
+    width: 95vw;
+    margin-top: 10px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    line-height: 1.35;
+    text-align: left; /* gives breathing room on narrow screens */
+    padding: 0 6px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    text-align: left;
+    padding: 0 6px;
+  }
+
+  .heart {
+    font-size: 1.8rem;
+    margin-top: 12px;
+  }
+
+  .signature {
+    font-size: 1.35rem;
+    margin-top: 6px;
+  }
+}
+
+
