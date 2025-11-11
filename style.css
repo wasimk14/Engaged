@@ -174,4 +174,24 @@ p {
   }
 }
 
+.music-button {
+  margin-top: 20px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 22px;
+  background: #ff9bb7;
+  color: #2b1124;
+  font-family: "Caveat", cursive;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 4.8s ease forwards;
+  transition: background 0.4s;
+}
+
+.music-button:hover {
+  background: #ffb8cf;
+}
+
+
 
